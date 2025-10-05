@@ -34,7 +34,7 @@ log_scrape:
 
 Note that `log_scrape.start_time` is defined as the first start position to post to loki
 
-If the program has been runed for more than one time, the position will be stored to `.pos.data` file, same directory with program executable.
+If the program has been run for more than one time, the position will be stored to `.pos.data` file, same directory with program executable.
 
 The format of `.pos.dat` file is `\n` separated: `${LastTimeStamp}\n${LastLogSequence}`, for example:
 
