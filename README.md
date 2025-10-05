@@ -61,3 +61,13 @@ nohup ./mr-watcher &
 `class(LSI LogLevel)`, `code(LSI LogType)`, `locale(LSI LogRole)`, etc. are send to Loki as metadata
 
 You can add some customized alert rules according to them later.
+
+## Graceful shutdown
+
+This program supports graceful shutdown.
+
+Remaining events will be submitted and new position will be updated to `.pos.dat`
+
+```bash
+killall -SIGTERM mr-watcher
+```
