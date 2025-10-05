@@ -1,0 +1,16 @@
+service:
+  log_dir: "/home/your_username/logs" # path to save program logs
+
+log_scrape:
+  log_path: "/tmp/mr-logs/sas.log" # path to lsi event logs
+  interval: 15s # scrape interval
+  start_time: "2025-10-01 00:00:00" # scrape start time (only when first run)
+
+loki:
+  push_url: "http://192.168.100.173:3100/loki/api/v1/push" # url to loki service
+  labels:
+    service_name: "mr-watcher" # custom labels
+    instance: "/dev/bus/1"
+  batch_wait: 60s
+  batch_size: 1000
+  push_origin_ts: true # push origin lsi event timestamp to loki
